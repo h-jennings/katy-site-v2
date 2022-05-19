@@ -33,3 +33,11 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# Seo stuff created at build time
+public/sitemap.xml
+public/sitemap-?.xml
+public/robots.txt
