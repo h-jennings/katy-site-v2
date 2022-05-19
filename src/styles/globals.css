@@ -15,10 +15,10 @@ body {
 
 body {
   /* TODO: replace */
-  font-family: var(--fonts-audible);
+  font-family: var(--fonts-primary);
   line-height: 1.33;
-  color: var(--colors-textPrimary);
-  background-image: var(--colors-uiGradient);
+  color: var(--colors-text1);
+  background-color: var(--colors-uiBg);
   min-height: 100vh;
 }
 
