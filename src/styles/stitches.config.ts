@@ -38,7 +38,6 @@ export const { getCssText, styled, css } = createStitches({
       medium: 600,
       bold: 700,
     },
-
     space: {
       /* @link https://utopia.fyi/space/calculator?c=360,16,1.2,1024,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
       1: 'clamp(0.25rem, calc(0.22rem + 0.15vw), 0.31rem)',
