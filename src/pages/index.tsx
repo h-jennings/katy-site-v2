@@ -23,7 +23,7 @@ const Home: NextPage = () => {
       </Text>
       <Text>
         This is some content{' '}
-        <Text gap="1" as="span" family="serif">
+        <Text gap="9" as="span" family="serif">
           Serif italic
         </Text>{' '}
         and some other text.
@@ -46,9 +46,7 @@ const Text = styled('p', {
         fontFamily: '$serif',
       },
     },
-    gap: {
-      ...GAP,
-    },
+    gap: GAP,
     gapX: COLUMN_GAP,
   },
   defaultVariants: {
