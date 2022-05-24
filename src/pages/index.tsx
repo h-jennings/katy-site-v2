@@ -1,5 +1,5 @@
 import { styled } from '@/styles/stitches.config';
-import { COLUMN_GAP, GAP } from '@/utils/constants/gap.constants';
+import { COLUMN_GAP, GAP } from '@/utils/constants/space.constants';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
