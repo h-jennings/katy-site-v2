@@ -1,4 +1,5 @@
 import { styled } from '@/styles/stitches.config';
+import { COLUMN_GAP, GAP } from '@/utils/constants/gap.constants';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
@@ -22,7 +23,7 @@ const Home: NextPage = () => {
       </Text>
       <Text>
         This is some content{' '}
-        <Text as="span" family="serif">
+        <Text gap="1" as="span" family="serif">
           Serif italic
         </Text>{' '}
         and some other text.
@@ -45,6 +46,10 @@ const Text = styled('p', {
         fontFamily: '$serif',
       },
     },
+    gap: {
+      ...GAP,
+    },
+    gapX: COLUMN_GAP,
   },
   defaultVariants: {
     family: 'primary',

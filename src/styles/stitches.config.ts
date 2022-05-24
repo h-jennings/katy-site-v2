@@ -2,7 +2,7 @@ import { slate } from '@radix-ui/colors';
 import type * as Stitches from '@stitches/react';
 import { createStitches } from '@stitches/react';
 
-export const { getCssText, styled, css } = createStitches({
+export const { getCssText, styled, css, theme } = createStitches({
   theme: {
     fonts: {
       primary: '"Supreme", sans-serif',
@@ -51,14 +51,14 @@ export const { getCssText, styled, css } = createStitches({
       9: 'clamp(6.00rem, calc(5.19rem + 3.61vw), 7.50rem)',
 
       // Steps
-      '3xs-2xs': 'clamp(0.25rem, calc(0.05rem + 0.90vw), 0.63rem)',
-      '2xs-xs': 'clamp(0.50rem, calc(0.26rem + 1.05vw), 0.94rem)',
-      'xs-s': 'clamp(0.75rem, calc(0.48rem + 1.20vw), 1.25rem)',
-      's-m': 'clamp(1.00rem, calc(0.53rem + 2.11vw), 1.88rem)',
-      'm-l': 'clamp(1.50rem, calc(0.96rem + 2.41vw), 2.50rem)',
-      'l-xl': 'clamp(2.00rem, calc(1.05rem + 4.22vw), 3.75rem)',
-      'xl-2xl': 'clamp(3.00rem, calc(1.92rem + 4.82vw), 5.00rem)',
-      '2xl-3xl': 'clamp(4.00rem, calc(2.10rem + 8.43vw), 7.50rem)',
+      '1-2': 'clamp(0.25rem, calc(0.05rem + 0.90vw), 0.63rem)',
+      '2-3': 'clamp(0.50rem, calc(0.26rem + 1.05vw), 0.94rem)',
+      '3-4': 'clamp(0.75rem, calc(0.48rem + 1.20vw), 1.25rem)',
+      '4-5': 'clamp(1.00rem, calc(0.53rem + 2.11vw), 1.88rem)',
+      '5-6': 'clamp(1.50rem, calc(0.96rem + 2.41vw), 2.50rem)',
+      '6-7': 'clamp(2.00rem, calc(1.05rem + 4.22vw), 3.75rem)',
+      '7-8': 'clamp(3.00rem, calc(1.92rem + 4.82vw), 5.00rem)',
+      '8-9': 'clamp(4.00rem, calc(2.10rem + 8.43vw), 7.50rem)',
     },
     sizes: {
       full: '100%',
