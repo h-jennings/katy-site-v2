@@ -1,6 +1,7 @@
 import { styled } from '@/styles/stitches.config';
 import * as React from 'react';
 import { ChannelInner, ChannelOuter } from './Channel';
+import { Footer } from './Footer';
 import { Header } from './Header';
 
 export const RootLayout = ({ children }: React.PropsWithChildren<unknown>) => {
@@ -21,13 +22,7 @@ const Container = styled('div', {
   minHeight: '$screenH',
   display: 'flex',
   alignItems: 'center',
-  flexFlow: 'column',
+  flexDirection: 'column',
   height: '$full',
   paddingX: '$3',
 });
-
-const Footer = () => (
-  <ChannelOuter as="footer">
-    <ChannelInner>footer</ChannelInner>
-  </ChannelOuter>
-);

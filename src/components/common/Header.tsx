@@ -10,7 +10,7 @@ export const Header = () => (
     <ChannelInner>
       <HeaderWrapper>
         <ContentWrapper>
-          <Paragraph size="0" leading="4" css={{ maxWidth: '60ch' }}>
+          <Paragraph size="0" leading="4" css={{ maxWidth: '50ch' }}>
             Kathryn Pentz is a privacy professional based in Richmond, Virginia.
             She currently works for Deloitte as a Privacy Program Manager and is
             open to new opportunites.
@@ -71,7 +71,7 @@ const HeaderWrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column-reverse',
 
-  '@bp1': {
+  '@bp3': {
     flexDirection: 'row',
   },
 });

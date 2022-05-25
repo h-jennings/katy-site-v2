@@ -60,6 +60,7 @@ export const text = css({
     weight: 'regular',
     leading: '2',
     style: 'normal',
+    inline: false,
   },
 });
 
