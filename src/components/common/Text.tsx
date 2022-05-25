@@ -16,6 +16,9 @@ export const text = css({
       1: {
         color: '$text1',
       },
+      2: {
+        color: '$text2',
+      },
     },
     leading: {
       0: {

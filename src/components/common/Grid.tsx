@@ -1,7 +1,7 @@
 import { styled } from '@/styles/stitches.config';
 import { COLUMN_GAP, GAP, ROW_GAP } from '@/utils/constants/space.constants';
 
-export const StyledGrid = styled('div', {
+export const Grid = styled('div', {
   display: 'grid',
 
   variants: {
@@ -57,19 +57,19 @@ export const StyledGrid = styled('div', {
       columnDense: {
         gridAutoFlow: 'column dense',
       },
-      columns: {
-        1: {
-          gridTemplateColumns: 'repeat(1, 1fr)',
-        },
-        2: {
-          gridTemplateColumns: 'repeat(2, 1fr)',
-        },
-        3: {
-          gridTemplateColumns: 'repeat(3, 1fr)',
-        },
-        4: {
-          gridTemplateColumns: 'repeat(4, 1fr)',
-        },
+    },
+    columns: {
+      1: {
+        gridTemplateColumns: 'repeat(1, 1fr)',
+      },
+      2: {
+        gridTemplateColumns: 'repeat(2, 1fr)',
+      },
+      3: {
+        gridTemplateColumns: 'repeat(3, 1fr)',
+      },
+      4: {
+        gridTemplateColumns: 'repeat(4, 1fr)',
       },
     },
     gap: GAP,
