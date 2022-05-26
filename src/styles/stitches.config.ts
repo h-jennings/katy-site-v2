@@ -15,6 +15,9 @@ export const { getCssText, styled, css, theme } = createStitches({
       text1: '$slate12',
       text2: '$slate10',
     },
+    transitions: {
+      default: '225ms cubic-bezier(0.4, 0, 0.2, 1)',
+    },
     fontSizes: {
       /* @link https://utopia.fyi/type/calculator?c=360,14,1.333,1040,16,1.333,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
       '-1': 'clamp(0.66rem, calc(0.61rem + 0.22vw), 0.75rem)',

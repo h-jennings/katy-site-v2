@@ -6,6 +6,7 @@ import { ChannelInner, ChannelOuter } from './Channel';
 import { Flex } from './Flex';
 import { Grid } from './Grid';
 import { HeadingText } from './HeadingText';
+import { NavigationLinks } from './NavigationLinks';
 import { Stack } from './Stack';
 import { Text } from './Text';
 
@@ -28,36 +29,7 @@ export const Footer = () => (
                 <HeadingText css={{ textAlign: 'right' }}>Contact</HeadingText>
               </Box>
               <Box css={{ paddingLeft: '$6' }}>
-                <Stack gap="2">
-                  <NextLink href="/">
-                    <a style={{ display: 'inline-flex' }}>
-                      <Text size="0" color="2" leading="0">
-                        pentz.katy@gmail.com
-                      </Text>
-                    </a>
-                  </NextLink>
-                  <NextLink href="/">
-                    <a style={{ display: 'inline-flex' }}>
-                      <Text size="0" color="2" leading="0">
-                        linkedin
-                      </Text>
-                    </a>
-                  </NextLink>
-                  <NextLink href="/">
-                    <a style={{ display: 'inline-flex' }}>
-                      <Text size="0" color="2" leading="0">
-                        linkedin
-                      </Text>
-                    </a>
-                  </NextLink>
-                  <NextLink href="/">
-                    <a style={{ display: 'inline-flex' }}>
-                      <Text size="0" color="2" leading="0">
-                        linkedin
-                      </Text>
-                    </a>
-                  </NextLink>
-                </Stack>
+                <NavigationLinks />
               </Box>
             </Grid>
             <Grid columns="2">
@@ -106,7 +78,7 @@ const BigYear = () => {
       size={{ '@initial': '5', '@bp1': '6' }}
       css={{ fontFamily: '$serif_condensed' }}
     >
-      &copy; {new Date().getFullYear()}
+      &copy;{new Date().getFullYear()}
     </Text>
   );
 };
