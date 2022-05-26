@@ -2,7 +2,7 @@ import { styled } from '@/styles/stitches.config';
 import NextLink from 'next/link';
 import { ChannelInner, ChannelOuter } from './Channel';
 import { Flex } from './Flex';
-import { Stack } from './Stack';
+import { NavigationLinks } from './NavigationLinks';
 import { Paragraph, Text } from './Text';
 
 export const Header = () => (
@@ -30,36 +30,7 @@ export const Header = () => (
                 </a>
               </NextLink>
             </div>
-            <Stack gap="2">
-              <NextLink href="/">
-                <a style={{ display: 'inline-flex' }}>
-                  <Text size="0" color="2" leading="0">
-                    pentz.katy@gmail.com
-                  </Text>
-                </a>
-              </NextLink>
-              <NextLink href="/">
-                <a style={{ display: 'inline-flex' }}>
-                  <Text size="0" color="2" leading="0">
-                    linkedin
-                  </Text>
-                </a>
-              </NextLink>
-              <NextLink href="/">
-                <a style={{ display: 'inline-flex' }}>
-                  <Text size="0" color="2" leading="0">
-                    read.cv
-                  </Text>
-                </a>
-              </NextLink>
-              <NextLink href="/">
-                <a style={{ display: 'inline-flex' }}>
-                  <Text size="0" color="2" leading="0">
-                    twitter
-                  </Text>
-                </a>
-              </NextLink>
-            </Stack>
+            <NavigationLinks />
           </Flex>
         </ContentWrapper>
       </HeaderWrapper>
