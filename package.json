@@ -27,7 +27,7 @@
     "next": "12.1.6",
     "next-compose-plugins": "^2.2.1",
     "next-seo": "^5.4.0",
-    "next-sitemap": "^2.5.24",
+    "next-sitemap": "^2.5.27",
     "react": "18.1.0",
     "react-dom": "18.1.0"
   },
