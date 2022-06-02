@@ -24,6 +24,7 @@
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-toast": "^0.1.1",
+    "@radix-ui/react-visually-hidden": "^0.1.4",
     "@stitches/react": "^1.2.8",
     "copy-to-clipboard": "^3.3.1",
     "framer-motion": "^6.3.4",
@@ -31,8 +32,8 @@
     "next-compose-plugins": "^2.2.1",
     "next-seo": "^5.4.0",
     "next-sitemap": "^2.5.24",
-    "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.1.6",
