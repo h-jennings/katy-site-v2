@@ -1,7 +1,8 @@
+import { SectionFocusArea } from '@/components/home/SectionFocusArea';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
-  return <div>main content</div>;
+  return <SectionFocusArea />;
 };
 
 export default Home;

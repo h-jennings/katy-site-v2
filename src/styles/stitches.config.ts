@@ -85,6 +85,7 @@ export const { getCssText, styled, css, theme } = createStitches({
       screenH: '100vh',
       channel: '1380px',
       desktop: '1440px',
+      prose: '60ch',
     },
     radii: {
       pill: '9999px',

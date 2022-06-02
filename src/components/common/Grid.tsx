@@ -71,6 +71,18 @@ export const Grid = styled('div', {
       4: {
         gridTemplateColumns: 'repeat(4, 1fr)',
       },
+      auto1: {
+        gridTemplateColumns: 'repeat(1, auto)',
+      },
+      auto2: {
+        gridTemplateColumns: 'repeat(2, auto)',
+      },
+      auto3: {
+        gridTemplateColumns: 'repeat(3, auto)',
+      },
+      auto4: {
+        gridTemplateColumns: 'repeat(4, auto)',
+      },
     },
     gap: GAP,
     gapX: COLUMN_GAP,
