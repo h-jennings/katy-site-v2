@@ -15,5 +15,9 @@
     "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/prefer-reduce-type-parameter": "off"
   },
-  "ignorePatterns": ["next-sitemap.js", "next-seo.config.js", "next.config.js"]
+  "ignorePatterns": [
+    "next-sitemap.config.js",
+    "next-seo.config.js",
+    "next.config.js"
+  ]
 }
