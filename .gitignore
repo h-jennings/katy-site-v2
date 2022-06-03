@@ -44,3 +44,6 @@ yarn-error.log*
 public/sitemap.xml
 public/sitemap-?.xml
 public/robots.txt
+
+# Generated graphql stuff
+schema.generated.graphql

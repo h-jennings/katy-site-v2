@@ -1,3 +1,4 @@
+import { GetHomepageDataQuery } from '@/graphql/generated/types.generated';
 import { styled } from '@/styles/stitches.config';
 import { Grid } from '@components/common/Grid';
 import { IconArrowBottomRight } from '@components/common/icon/ArrowBottomRight';
@@ -7,32 +8,34 @@ import { H3 } from '@components/common/Text';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import { SectionContainer } from './SectionContainer';
 
-export const SectionFocusArea = () => {
+type HomepageData = NonNullable<GetHomepageDataQuery['homepage']>;
+
+interface SectionFocusAreaProps {
+  textBlock?: HomepageData['areasOfFocusTextBlock'] | undefined;
+  focusItems: HomepageData['areasOfFocusItems'] | undefined;
+}
+
+export const SectionFocusArea = ({ focusItems }: SectionFocusAreaProps) => {
+  const hasFocusItems = focusItems && focusItems.length > 0;
+
+  const focusListUi = hasFocusItems ? (
+    <ListStack gap="6">
+      {focusItems.map(({ id, title, blurb }) => (
+        <Stack key={id} as="li" gap="4">
+          <H3>{title}</H3>
+          <Grid gap="2" columns="auto2" align="baseline">
+            <IconArrowBottomRight aria-hidden color="var(--colors-text2)" />
+            <ProseText color="2">{blurb}</ProseText>
+          </Grid>
+        </Stack>
+      ))}
+    </ListStack>
+  ) : null;
+
   return (
     <SectionContainer label="I. Areas of focus">
       <Stack gap="8-9">
-        <ListStack gap="6">
-          <Stack as="li" gap="4">
-            <H3>Privacy by design</H3>
-            <Grid gap="2" columns="auto2" align="baseline">
-              <IconArrowBottomRight aria-hidden color="var(--colors-text2)" />
-              <ProseText color="2">
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                qui officia deserunt mollit anim id est laborum.
-              </ProseText>
-            </Grid>
-          </Stack>
-          <Stack as="li" gap="4">
-            <H3>Privacy by design</H3>
-            <Grid gap="2" columns="auto2" align="baseline">
-              <IconArrowBottomRight aria-hidden color="var(--colors-text2)" />
-              <ProseText color="2">
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                qui officia deserunt mollit anim id est laborum.
-              </ProseText>
-            </Grid>
-          </Stack>
-        </ListStack>
+        {focusListUi}
         <ProseContainer>
           <VisuallyHidden.Root>
             <h3>More Details</h3>
