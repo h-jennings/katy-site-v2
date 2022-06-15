@@ -1,6 +1,10 @@
 import { slate } from '@radix-ui/colors';
 import type * as Stitches from '@stitches/react';
 import { createStitches } from '@stitches/react';
+import { createFluidValue } from './create-fluid-value';
+
+const getConfigFluidValue = (minSize: number, maxSize: number) =>
+  createFluidValue(minSize, maxSize, 360, 1040);
 
 export const { getCssText, styled, css, theme } = createStitches({
   theme: {
@@ -20,14 +24,14 @@ export const { getCssText, styled, css, theme } = createStitches({
     },
     fontSizes: {
       /* @link https://utopia.fyi/type/calculator?c=360,14,1.333,1040,16,1.333,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
-      '-1': 'clamp(0.66rem, calc(0.61rem + 0.22vw), 0.75rem)',
-      0: 'clamp(0.88rem, calc(0.81rem + 0.29vw), 1.00rem)',
-      1: 'clamp(1.17rem, calc(1.08rem + 0.39vw), 1.33rem)',
-      2: 'clamp(1.56rem, calc(1.44rem + 0.52vw), 1.78rem)',
-      3: 'clamp(2.07rem, calc(1.92rem + 0.70vw), 2.37rem)',
-      4: 'clamp(2.76rem, calc(2.55rem + 0.93vw), 3.16rem)',
-      5: 'clamp(3.68rem, calc(3.40rem + 1.24vw), 4.21rem)',
-      6: 'clamp(4.91rem, calc(4.54rem + 1.65vw), 5.61rem)',
+      '-1': getConfigFluidValue(10, 12),
+      0: getConfigFluidValue(14, 16),
+      1: getConfigFluidValue(19, 21),
+      2: getConfigFluidValue(25, 28),
+      3: getConfigFluidValue(33, 38),
+      4: getConfigFluidValue(44, 51),
+      5: getConfigFluidValue(59, 67),
+      6: getConfigFluidValue(78, 90),
     },
     lineHeights: {
       0: 1,
@@ -42,42 +46,41 @@ export const { getCssText, styled, css, theme } = createStitches({
     },
     space: {
       /* @link https://utopia.fyi/space/calculator?c=360,16,1.2,1024,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
-      // 4 <-> 5
-      1: 'clamp(0.25rem, calc(0.22rem + 0.15vw), 0.31rem)',
+      1: getConfigFluidValue(4, 5),
       // 8 <-> 10
-      2: 'clamp(0.50rem, calc(0.43rem + 0.30vw), 0.63rem)',
+      2: getConfigFluidValue(8, 10),
       // 12 <-> 15
-      3: 'clamp(0.75rem, calc(0.65rem + 0.45vw), 0.94rem)',
+      3: getConfigFluidValue(12, 15),
       // 16 <-> 20
-      4: 'clamp(1.00rem, calc(0.86rem + 0.60vw), 1.25rem)',
+      4: getConfigFluidValue(16, 20),
       // 24 <-> 30
-      5: 'clamp(1.50rem, calc(1.30rem + 0.90vw), 1.88rem)',
+      5: getConfigFluidValue(24, 30),
       // 32 <-> 40
-      6: 'clamp(2.00rem, calc(1.73rem + 1.20vw), 2.50rem)',
+      6: getConfigFluidValue(32, 40),
       // 48 <-> 60
-      7: 'clamp(3.00rem, calc(2.59rem + 1.81vw), 3.75rem)',
+      7: getConfigFluidValue(48, 60),
       // 64 <-> 80
-      8: 'clamp(4.00rem, calc(3.46rem + 2.41vw), 5.00rem)',
+      8: getConfigFluidValue(64, 80),
       // 96 <-> 120
-      9: 'clamp(6.00rem, calc(5.19rem + 3.61vw), 7.50rem)',
+      9: getConfigFluidValue(96, 120),
 
       // Steps
       // 4 <-> 10
-      '1-2': 'clamp(0.25rem, calc(0.05rem + 0.90vw), 0.63rem)',
+      '1-2': getConfigFluidValue(4, 10),
       // 8 <-> 15
-      '2-3': 'clamp(0.50rem, calc(0.26rem + 1.05vw), 0.94rem)',
+      '2-3': getConfigFluidValue(8, 15),
       // 12 <-> 20
-      '3-4': 'clamp(0.75rem, calc(0.48rem + 1.20vw), 1.25rem)',
+      '3-4': getConfigFluidValue(12, 20),
       // 16 <-> 30
-      '4-5': 'clamp(1.00rem, calc(0.53rem + 2.11vw), 1.88rem)',
+      '4-5': getConfigFluidValue(16, 30),
       // 24 <-> 40
-      '5-6': 'clamp(1.50rem, calc(0.96rem + 2.41vw), 2.50rem)',
+      '5-6': getConfigFluidValue(24, 40),
       // 32 <-> 60
-      '6-7': 'clamp(2.00rem, calc(1.05rem + 4.22vw), 3.75rem)',
-      // 32 <-> 60
-      '7-8': 'clamp(3.00rem, calc(1.92rem + 4.82vw), 5.00rem)',
+      '6-7': getConfigFluidValue(32, 60),
+      // 48 <-> 80
+      '7-8': getConfigFluidValue(48, 80),
       // 64 <-> 120
-      '8-9': 'clamp(4.00rem, calc(2.10rem + 8.43vw), 7.50rem)',
+      '8-9': getConfigFluidValue(64, 120),
     },
     sizes: {
       full: '100%',
