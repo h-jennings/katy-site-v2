@@ -19,6 +19,7 @@
   "ignorePatterns": [
     "next-sitemap.config.js",
     "next-seo.config.js",
-    "next.config.js"
+    "next.config.js",
+    "graphql.config.js"
   ]
 }
