@@ -1,4 +1,4 @@
-import { slate } from '@radix-ui/colors';
+import { brown, slate } from '@radix-ui/colors';
 import type * as Stitches from '@stitches/react';
 import { createStitches } from '@stitches/react';
 import { createFluidValue } from './create-fluid-value';
@@ -15,9 +15,12 @@ export const { getCssText, styled, css, theme } = createStitches({
     },
     colors: {
       ...slate,
+      ...brown,
       uiBg: '$slate1',
       text1: '$slate12',
       text2: '$slate10',
+      action: '$brown11',
+      actionHover: '$brown12',
     },
     transitions: {
       default: '225ms cubic-bezier(0.4, 0, 0.2, 1)',

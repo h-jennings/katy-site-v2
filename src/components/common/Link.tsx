@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import * as React from 'react';
 
 interface LinkProps extends React.HtmlHTMLAttributes<HTMLAnchorElement> {
-  href: string;
+  href?: string;
   openInNewTab?: boolean;
   target?: string;
   rel?: string;
@@ -12,18 +12,23 @@ interface LinkProps extends React.HtmlHTMLAttributes<HTMLAnchorElement> {
 export const Link = React.forwardRef<
   HTMLAnchorElement,
   React.PropsWithChildren<LinkProps>
->(({ href, children, openInNewTab, rel, target, ...rest }, forwardedRef) => (
-  <NextLink href={href} passHref>
-    <a
-      {...rest}
-      rel={openInNewTab ? 'noopener norefferer' : rel}
-      target={openInNewTab ? '_blank' : target}
-      ref={forwardedRef}
-    >
-      {children}
-    </a>
-  </NextLink>
-));
+>(
+  (
+    { href = '/', children, openInNewTab, rel, target, ...rest },
+    forwardedRef,
+  ) => (
+    <NextLink href={href} passHref>
+      <a
+        {...rest}
+        rel={openInNewTab ? 'noopener norefferer' : rel}
+        target={openInNewTab ? '_blank' : target}
+        ref={forwardedRef}
+      >
+        {children}
+      </a>
+    </NextLink>
+  ),
+);
 
 Link.displayName = 'Link';
 
@@ -32,11 +37,11 @@ const linkStyles = css({
   fontFamily: '$primary',
   cursor: 'pointer',
   lineHeight: '$0',
-  color: '$text2',
+  color: '$action',
   transition: '$default',
   fontSize: '$0',
   hover: {
-    color: '$slate12',
+    color: '$actionHover',
   },
 });
 

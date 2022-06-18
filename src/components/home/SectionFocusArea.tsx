@@ -3,10 +3,10 @@ import { styled } from '@/styles/stitches.config';
 import { Grid } from '@components/common/Grid';
 import { IconArrowBottomRight } from '@components/common/icon/ArrowBottomRight';
 import { ProseText } from '@components/common/ProseText';
+import { RichText } from '@components/common/RichText';
 import { Stack } from '@components/common/Stack';
 import { H3 } from '@components/common/Text';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
-import * as React from 'react';
 import { SectionContainer } from './SectionContainer';
 
 type HomepageData = NonNullable<GetHomepageDataQuery['homepage']>;
@@ -17,7 +17,10 @@ interface SectionFocusAreaProps {
   focusItems: FocusItems;
 }
 
-export const SectionFocusArea = ({ focusItems }: SectionFocusAreaProps) => {
+export const SectionFocusArea = ({
+  focusItems,
+  textBlock,
+}: SectionFocusAreaProps) => {
   return (
     <SectionContainer label="I. Areas of focus">
       <Stack gap="8-9">
@@ -26,30 +29,7 @@ export const SectionFocusArea = ({ focusItems }: SectionFocusAreaProps) => {
           <VisuallyHidden.Root>
             <h3>More Details</h3>
           </VisuallyHidden.Root>
-          <ProseText>
-            I support global commercial companies to build resilient data
-            privacy and protection programs with the goal of providing consumers
-            with data security, transparency and choice.
-          </ProseText>
-          <ProseText>
-            I have led several privacy software implementations and developed a
-            standard methodology to drive consistent delivery. Across both a
-            program build and product implementation, I have been an ambassador
-            to stakeholders across organizations.
-          </ProseText>
-          <ProseText>
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum.
-          </ProseText>
-          <ProseText>
-            Develop and enhance privacy programs for global commercial clients
-            in preparation for evolving privacy regulations, including the
-            General Data Protection Regulation (GDPR) and the California
-            Consumer Privacy Act (CCPA); Define and implement governance and
-            operating models, stand up data subject rights processes and
-            platforms, roll out change management materials, and structure
-            monitoring and reporting schedules.
-          </ProseText>
+          {textBlock ? <RichText content={textBlock.raw} /> : null}
         </ProseContainer>
       </Stack>
     </SectionContainer>
@@ -77,8 +57,6 @@ interface FocusListProps {
 
 const FocusList = ({ focusItems }: FocusListProps) => {
   const hasFocusItems = focusItems && focusItems.length > 0;
-
-  React.useEffect(() => console.log(focusItems), [focusItems]);
 
   return hasFocusItems ? (
     <ListStack gap="6">
