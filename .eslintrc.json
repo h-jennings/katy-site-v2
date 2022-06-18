@@ -13,6 +13,8 @@
   ],
   "rules": {
     "no-unused-vars": "off",
+    "no-console": "warn",
+    "no-debugger": "error",
     "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/prefer-reduce-type-parameter": "off"
   },
