@@ -1,5 +1,5 @@
-import { GetHomepageDataQuery } from '@/graphql/generated/types.generated';
 import { styled } from '@/styles/stitches.config';
+import { HomepageData } from '@/utils/types/cms-data';
 import { Grid } from '@components/common/Grid';
 import { IconArrowBottomRight } from '@components/common/icon/ArrowBottomRight';
 import { ProseText } from '@components/common/ProseText';
@@ -9,7 +9,6 @@ import { H3 } from '@components/common/Text';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import { SectionContainer } from './SectionContainer';
 
-type HomepageData = NonNullable<GetHomepageDataQuery['homepage']>;
 type FocusItems = HomepageData['areasOfFocusItems'] | undefined;
 
 interface SectionFocusAreaProps {

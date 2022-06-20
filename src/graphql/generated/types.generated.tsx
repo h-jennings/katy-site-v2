@@ -7255,6 +7255,12 @@ export type GetHomepageDataQuery = {
       blurb: string;
     }>;
     areasOfFocusTextBlock: { __typename?: 'RichText'; raw: any };
+    certificationsAndMembershipsLinks: Array<{
+      __typename?: 'Link';
+      id: string;
+      href: string;
+      displayText?: string | null;
+    }>;
   } | null;
 };
 
@@ -7300,6 +7306,11 @@ export const GetHomepageDataDocument = gql`
       }
       areasOfFocusTextBlock {
         raw
+      }
+      certificationsAndMembershipsLinks {
+        id
+        href
+        displayText
       }
     }
   }
