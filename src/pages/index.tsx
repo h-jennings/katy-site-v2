@@ -4,6 +4,7 @@ import {
   useGetHomepageDataQuery,
 } from '@/graphql/generated/types.generated';
 import { graphCmsClient, withUrqlSSR } from '@/graphql/urql';
+import { SectionCerts } from '@components/home/SectionCerts';
 import { SectionFocusArea } from '@components/home/SectionFocusArea';
 import type { GetServerSideProps } from 'next';
 import { ssrExchange } from 'urql';
@@ -11,13 +12,20 @@ import { ssrExchange } from 'urql';
 const Home = () => {
   const [{ data }] = useGetHomepageDataQuery();
   const { homepage } = data ?? {};
-  const { areasOfFocusTextBlock, areasOfFocusItems } = homepage ?? {};
+  const {
+    areasOfFocusTextBlock,
+    areasOfFocusItems,
+    certificationsAndMembershipsLinks,
+  } = homepage ?? {};
 
   return (
-    <SectionFocusArea
-      textBlock={areasOfFocusTextBlock}
-      focusItems={areasOfFocusItems}
-    />
+    <>
+      <SectionFocusArea
+        textBlock={areasOfFocusTextBlock}
+        focusItems={areasOfFocusItems}
+      />
+      <SectionCerts links={certificationsAndMembershipsLinks} />
+    </>
   );
 };
 

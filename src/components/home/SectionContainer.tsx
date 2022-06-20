@@ -28,13 +28,14 @@ const InnerGrid = styled('div', {
   gridTemplateColumns: ' 1fr',
   rowGap: '$8-9',
   columnGap: '$6',
+  alignItems: 'baseline',
   '@bp3': {
-    gridTemplateColumns: '150px 1fr',
+    gridTemplateColumns: '200px 1fr',
   },
 });
 
 const Section = styled('div', {
-  paddingY: '$9',
+  paddingY: '$8-9',
   paddingX: '$3',
 
   '@bp1': {

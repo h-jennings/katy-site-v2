@@ -25,10 +25,13 @@ const LINKS = {
 
 const EMAIL = 'pentz.katy@gmail.com';
 
+// TODO: Wire up to CMS
 export const NavigationLinks = () => {
   const linkList = Object.entries(LINKS).map(([, { href, text }]) => (
     <Flex key={text}>
-      <StyledLink href={href}>{text}</StyledLink>
+      <StyledLink href={href} css={{ color: '$text2' }}>
+        {text}
+      </StyledLink>
     </Flex>
   ));
 
@@ -55,7 +58,7 @@ const Email = () => {
         onHoverEnd={() => setHovered(false)}
         aria-label="Copy email to clipboard"
         onClick={onCopy}
-        css={{ display: 'inline-block' }}
+        css={{ display: 'inline-block', color: '$text2' }}
       >
         {EMAIL}
       </MotionButton>
