@@ -7255,6 +7255,14 @@ export type GetHomepageDataQuery = {
       blurb: string;
     }>;
     areasOfFocusTextBlock: { __typename?: 'RichText'; raw: any };
+    experienceTable: Array<{
+      __typename?: 'ExperienceItem';
+      id: string;
+      year: string;
+      company: string;
+      role: string;
+      description: string;
+    }>;
     certificationsAndMembershipsLinks: Array<{
       __typename?: 'Link';
       id: string;
@@ -7306,6 +7314,13 @@ export const GetHomepageDataDocument = gql`
       }
       areasOfFocusTextBlock {
         raw
+      }
+      experienceTable {
+        id
+        year
+        company
+        role
+        description
       }
       certificationsAndMembershipsLinks {
         id

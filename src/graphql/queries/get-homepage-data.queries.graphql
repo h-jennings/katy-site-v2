@@ -20,6 +20,13 @@ query GetHomepageData {
     areasOfFocusTextBlock {
       raw
     }
+    experienceTable {
+      id
+      year
+      company
+      role
+      description
+    }
     certificationsAndMembershipsLinks {
       id
       href

@@ -5,6 +5,7 @@ import {
 } from '@/graphql/generated/types.generated';
 import { graphCmsClient, withUrqlSSR } from '@/graphql/urql';
 import { SectionCerts } from '@components/home/SectionCerts';
+import { SectionExperience } from '@components/home/SectionExperience';
 import { SectionFocusArea } from '@components/home/SectionFocusArea';
 import type { GetServerSideProps } from 'next';
 import { ssrExchange } from 'urql';
@@ -16,6 +17,7 @@ const Home = () => {
     areasOfFocusTextBlock,
     areasOfFocusItems,
     certificationsAndMembershipsLinks,
+    experienceTable,
   } = homepage ?? {};
 
   return (
@@ -24,6 +26,7 @@ const Home = () => {
         textBlock={areasOfFocusTextBlock}
         focusItems={areasOfFocusItems}
       />
+      <SectionExperience experiences={experienceTable} />
       <SectionCerts links={certificationsAndMembershipsLinks} />
     </>
   );
