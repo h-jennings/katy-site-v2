@@ -15,6 +15,9 @@
     "no-unused-vars": "off",
     "no-console": "warn",
     "no-debugger": "error",
+    "no-constant-binary-expression": "warn",
+    "no-implicit-coercion": "warn",
+    "no-unneeded-ternary": "warn",
     "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/prefer-reduce-type-parameter": "off"
   },
