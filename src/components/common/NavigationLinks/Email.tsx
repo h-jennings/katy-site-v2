@@ -1,49 +1,14 @@
 import { useClipboard } from '@/utils/hooks/use-clipboard';
 import { motion } from 'framer-motion';
 import * as React from 'react';
-import { Flex } from './Flex';
-import { Grid } from './Grid';
-import { IconCheck } from './icon/Check';
-import { IconClipboard } from './icon/Clipboard';
-import { StyledLink, StyledLinkButton } from './Link';
-import { Stack } from './Stack';
-
-const LINKS = {
-  linkedin: {
-    text: 'linkedin',
-    href: 'https://www.linkedin.com/in/katy-pentz-736a9579',
-  },
-  readcv: {
-    text: 'read.cv',
-    href: '/',
-  },
-  twitter: {
-    text: 'twitter',
-    href: 'https://twitter.com/KatyPentz',
-  },
-} as const;
+import { Grid } from '../Grid';
+import { IconCheck } from '../icon/Check';
+import { IconClipboard } from '../icon/Clipboard';
+import { StyledLinkButton } from '../Link';
 
 const EMAIL = 'pentz.katy@gmail.com';
 
-// TODO: Wire up to CMS
-export const NavigationLinks = () => {
-  const linkList = Object.entries(LINKS).map(([, { href, text }]) => (
-    <Flex key={text}>
-      <StyledLink href={href} css={{ color: '$text2' }}>
-        {text}
-      </StyledLink>
-    </Flex>
-  ));
-
-  return (
-    <Stack gap="2">
-      <Email />
-      {linkList}
-    </Stack>
-  );
-};
-
-const Email = () => {
+export const Email = () => {
   const [hovered, setHovered] = React.useState(false);
   const { hasCopied, onCopy } = useClipboard(EMAIL);
 

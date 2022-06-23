@@ -2,7 +2,7 @@ import { styled } from '@/styles/stitches.config';
 import NextLink from 'next/link';
 import { ChannelInner, ChannelOuter } from './Channel';
 import { Flex } from './Flex';
-import { NavigationLinks } from './NavigationLinks';
+import { NavigationLinks } from './NavigationLinks/NavigationLinks';
 import { Paragraph, Text } from './Text';
 
 export const Header = () => (
@@ -10,6 +10,7 @@ export const Header = () => (
     <ChannelInner>
       <HeaderWrapper>
         <ContentWrapper>
+          {/* TODO: Wire up to CMS */}
           <Paragraph size="0" leading="4" css={{ maxWidth: '50ch' }}>
             Kathryn Pentz is a privacy professional based in Richmond, Virginia.
             She currently works for Deloitte as a Privacy Program Manager and is
