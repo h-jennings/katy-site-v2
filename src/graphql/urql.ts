@@ -1,8 +1,7 @@
+import { CMS_URL } from '@/utils/constants/cms.constants';
 import { NextPage } from 'next';
 import { initUrqlClient, SSRExchange, withUrqlClient } from 'next-urql';
 import { cacheExchange, dedupExchange, fetchExchange } from 'urql';
-
-const CMS_URL = `https://api-us-east-1.graphcms.com/v2/${process.env.CMS_SPACE}/master`;
 
 export const graphCmsClient = (ssrCache: SSRExchange, preview = false) => {
   return initUrqlClient(

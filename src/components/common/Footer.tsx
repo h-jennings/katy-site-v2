@@ -6,7 +6,7 @@ import { ChannelInner, ChannelOuter } from './Channel';
 import { Flex } from './Flex';
 import { Grid } from './Grid';
 import { HeadingText } from './HeadingText';
-import { NavigationLinks } from './NavigationLinks';
+import { NavigationLinks } from './NavigationLinks/NavigationLinks';
 import { Stack } from './Stack';
 import { Text } from './Text';
 
