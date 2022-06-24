@@ -11,7 +11,10 @@ query GetHomepageData {
         fileName
       }
     }
-    introduction
+    headerTextBlock {
+      raw
+    }
+    introduction # depreciated
     areasOfFocusItems {
       id
       title

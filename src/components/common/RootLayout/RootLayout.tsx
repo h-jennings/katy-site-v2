@@ -2,15 +2,18 @@ import { styled } from '@/styles/stitches.config';
 import * as React from 'react';
 import { ChannelInner, ChannelOuter } from '../Channel';
 import { Footer } from '../Footer';
-import { Header } from '../Header';
+import { Header } from '../Header/Header';
+import { HeaderTextBlockProvider } from '../Header/HeaderTextBlock';
 
 export const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <Container>
-      <Header />
-      <ChannelOuter css={{ flex: 1 }}>
-        <ChannelInner>{children}</ChannelInner>
-      </ChannelOuter>
+      <HeaderTextBlockProvider>
+        <Header />
+        <ChannelOuter css={{ flex: 1 }}>
+          <ChannelInner>{children}</ChannelInner>
+        </ChannelOuter>
+      </HeaderTextBlockProvider>
       <Footer />
     </Container>
   );
