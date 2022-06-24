@@ -4,7 +4,7 @@ import { ChannelInner, ChannelOuter } from './Channel';
 import { Footer } from './Footer';
 import { Header } from './Header';
 
-export const RootLayout = ({ children }: React.PropsWithChildren<unknown>) => {
+export const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <Container>
       <Header />

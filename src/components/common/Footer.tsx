@@ -10,7 +10,7 @@ import { NavigationLinks } from './NavigationLinks/NavigationLinks';
 import { Stack } from './Stack';
 import { Text } from './Text';
 
-export const Footer = () => (
+export const Footer = React.memo(() => (
   <ChannelOuter as="footer">
     <ChannelInner css={{ borderTop: '1px solid $slate6' }}>
       <ContentWrapper>
@@ -58,7 +58,9 @@ export const Footer = () => (
       </ContentWrapper>
     </ChannelInner>
   </ChannelOuter>
-);
+));
+
+Footer.displayName = 'Footer';
 
 const ContentWrapper = styled('div', {
   paddingTop: '$8',

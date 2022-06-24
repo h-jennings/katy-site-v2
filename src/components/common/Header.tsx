@@ -1,11 +1,12 @@
 import { styled } from '@/styles/stitches.config';
 import NextLink from 'next/link';
+import * as React from 'react';
 import { ChannelInner, ChannelOuter } from './Channel';
 import { Flex } from './Flex';
 import { NavigationLinks } from './NavigationLinks/NavigationLinks';
 import { Paragraph, Text } from './Text';
 
-export const Header = () => (
+export const Header = React.memo(() => (
   <ChannelOuter>
     <ChannelInner>
       <HeaderWrapper>
@@ -37,7 +38,9 @@ export const Header = () => (
       </HeaderWrapper>
     </ChannelInner>
   </ChannelOuter>
-);
+));
+
+Header.displayName = 'Header';
 
 const HeaderWrapper = styled('div', {
   display: 'flex',
