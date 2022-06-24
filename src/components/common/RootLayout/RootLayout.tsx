@@ -1,8 +1,8 @@
 import { styled } from '@/styles/stitches.config';
 import * as React from 'react';
-import { ChannelInner, ChannelOuter } from './Channel';
-import { Footer } from './Footer';
-import { Header } from './Header';
+import { ChannelInner, ChannelOuter } from '../Channel';
+import { Footer } from '../Footer';
+import { Header } from '../Header';
 
 export const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (

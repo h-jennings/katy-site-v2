@@ -1,14 +1,11 @@
-import * as React from 'react';
 import { Flex } from '../Flex';
 import { StyledLink } from '../Link';
+import { useLayoutDataStore } from '../RootLayout/layout-data.store';
 import { Stack } from '../Stack';
 import { Email } from './Email';
-import { useStore } from './navigation-data.store';
 
 export const NavigationLinks = () => {
-  const links = useStore((state) => state.links);
-
-  React.useEffect(() => console.log('rendered'));
+  const links = useLayoutDataStore((state) => state.links);
 
   return (
     <Stack gap="2">

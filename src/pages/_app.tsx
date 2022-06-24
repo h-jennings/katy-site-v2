@@ -1,11 +1,11 @@
-import { RootLayout } from '@/components/common/RootLayout';
 import { createGraphCMSClient } from '@/graphql/client';
 import {
   GetExternalLinksDocument,
   GetExternalLinksQuery,
 } from '@/graphql/generated/types.generated';
 import { Links } from '@/utils/types/cms-data';
-import { Provider } from '@components/common/NavigationLinks/navigation-data.store';
+import { LayoutDataProvider } from '@components/common/RootLayout/layout-data.store';
+import { RootLayout } from '@components/common/RootLayout/RootLayout';
 import { DefaultSeo } from 'next-seo';
 import SEO from 'next-seo.config';
 import type { AppContext, AppProps } from 'next/app';
@@ -21,7 +21,7 @@ function MyApp({
   return (
     <>
       <DefaultSeo {...SEO} />
-      <Provider
+      <LayoutDataProvider
         createStore={() =>
           create(() => ({
             links: linksData,
@@ -31,7 +31,7 @@ function MyApp({
         <RootLayout>
           <Component {...pageProps} />
         </RootLayout>
-      </Provider>
+      </LayoutDataProvider>
     </>
   );
 }
