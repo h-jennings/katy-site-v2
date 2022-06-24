@@ -5,14 +5,13 @@ import {
   GetExternalLinksQuery,
 } from '@/graphql/generated/types.generated';
 import { Links } from '@/utils/types/cms-data';
-import { NavigationLinksProvider } from '@components/common/NavigationLinks/NavigationLinksContext';
+import { Provider } from '@components/common/NavigationLinks/navigation-data.store';
 import { DefaultSeo } from 'next-seo';
 import SEO from 'next-seo.config';
 import type { AppContext, AppProps } from 'next/app';
 import App from 'next/app';
+import create from 'zustand';
 import '../styles/globals.css';
-
-let linksData: Links;
 
 function MyApp({
   Component,
@@ -22,14 +21,22 @@ function MyApp({
   return (
     <>
       <DefaultSeo {...SEO} />
-      <NavigationLinksProvider linksData={linksData}>
+      <Provider
+        createStore={() =>
+          create(() => ({
+            links: linksData,
+          }))
+        }
+      >
         <RootLayout>
           <Component {...pageProps} />
         </RootLayout>
-      </NavigationLinksProvider>
+      </Provider>
     </>
   );
 }
+
+let linksData: Links;
 
 MyApp.getInitialProps = async (appContext: AppContext) => {
   const preview = appContext.router.isPreview;
