@@ -1,22 +1,18 @@
 import { styled } from '@/styles/stitches.config';
 import NextLink from 'next/link';
 import * as React from 'react';
-import { ChannelInner, ChannelOuter } from './Channel';
-import { Flex } from './Flex';
-import { NavigationLinks } from './NavigationLinks/NavigationLinks';
-import { Paragraph, Text } from './Text';
+import { ChannelInner, ChannelOuter } from '../Channel';
+import { Flex } from '../Flex';
+import { NavigationLinks } from '../NavigationLinks/NavigationLinks';
+import { Text } from '../Text';
+import { HeaderTextBlock } from './HeaderTextBlock';
 
 export const Header = React.memo(() => (
   <ChannelOuter>
     <ChannelInner>
       <HeaderWrapper>
         <ContentWrapper>
-          {/* TODO: Wire up to CMS */}
-          <Paragraph size="0" leading="4" css={{ maxWidth: '50ch' }}>
-            Kathryn Pentz is a privacy professional based in Richmond, Virginia.
-            She currently works for Deloitte as a Privacy Program Manager and is
-            open to new opportunites.
-          </Paragraph>
+          <HeaderTextBlock />
         </ContentWrapper>
         <ContentWrapper as="nav">
           <Flex justify="between">

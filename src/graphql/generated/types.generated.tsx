@@ -2100,6 +2100,7 @@ export type Homepage = Node & {
   documentInStages: Array<Homepage>;
   /** A section to display a collection of work experiences */
   experienceTable: Array<ExperienceItem>;
+  headerTextBlock: RichText;
   /** List of Homepage versions */
   history: Array<Version>;
   /** The unique identifier */
@@ -2215,6 +2216,7 @@ export type HomepageCreateInput = {
   certificationsAndMembershipsLinks?: InputMaybe<LinkCreateManyInlineInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   experienceTable?: InputMaybe<ExperienceItemCreateManyInlineInput>;
+  headerTextBlock: Scalars['RichTextAST'];
   internalName: Scalars['String'];
   introduction: Scalars['String'];
   seo?: InputMaybe<SeoCreateOneInlineInput>;
@@ -2394,6 +2396,7 @@ export type HomepageUpdateInput = {
   areasOfFocusTextBlock?: InputMaybe<Scalars['RichTextAST']>;
   certificationsAndMembershipsLinks?: InputMaybe<LinkUpdateManyInlineInput>;
   experienceTable?: InputMaybe<ExperienceItemUpdateManyInlineInput>;
+  headerTextBlock?: InputMaybe<Scalars['RichTextAST']>;
   internalName?: InputMaybe<Scalars['String']>;
   introduction?: InputMaybe<Scalars['String']>;
   seo?: InputMaybe<SeoUpdateOneInlineInput>;
@@ -2418,6 +2421,7 @@ export type HomepageUpdateManyInlineInput = {
 
 export type HomepageUpdateManyInput = {
   areasOfFocusTextBlock?: InputMaybe<Scalars['RichTextAST']>;
+  headerTextBlock?: InputMaybe<Scalars['RichTextAST']>;
   introduction?: InputMaybe<Scalars['String']>;
 };
 
@@ -7248,6 +7252,7 @@ export type GetHomepageDataQuery = {
         fileName: string;
       } | null;
     } | null;
+    headerTextBlock: { __typename?: 'RichText'; raw: any };
     areasOfFocusItems: Array<{
       __typename?: 'FocusItem';
       id: string;
@@ -7305,6 +7310,9 @@ export const GetHomepageDataDocument = gql`
           height
           fileName
         }
+      }
+      headerTextBlock {
+        raw
       }
       introduction
       areasOfFocusItems {
