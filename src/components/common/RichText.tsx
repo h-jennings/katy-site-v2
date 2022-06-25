@@ -7,7 +7,7 @@ import { BlockQuote } from './BlockQuote';
 import { StyledLink } from './Link';
 import { StyledList } from './List';
 import { ProseText } from './ProseText';
-import { H1, H2, H3, H4, H5, H6, ListItem, Text } from './Text';
+import { H3, H4, H5, H6, ListItem, Text } from './Text';
 
 interface RichTextProps {
   content: RichTextContent;
@@ -21,14 +21,14 @@ export const RichText = ({ content, renderers }: RichTextProps) => {
 
 const DEFAULT_RENDERERS: NodeRendererType = {
   h1: ({ children }) => (
-    <H1 weight="bold" leading="0" size="1" css={{ marginBottom: '$5' }}>
+    <H3 weight="bold" leading="0" size="1" css={{ marginBottom: '$5' }}>
       {children}
-    </H1>
+    </H3>
   ),
   h2: ({ children }) => (
-    <H2 weight="bold" leading="0" size="1" css={{ marginBottom: '$5' }}>
+    <H3 weight="bold" leading="0" size="1" css={{ marginBottom: '$5' }}>
       {children}
-    </H2>
+    </H3>
   ),
   h3: ({ children }) => (
     <H3

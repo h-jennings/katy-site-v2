@@ -1,0 +1,24 @@
+query GetNowPageData {
+  nowPage(where: { id: "cl4tuisqo10kz0bk0su2ykjws" }) {
+    updatedAt
+    seo {
+      title
+      description
+      keywords
+      noIndex
+      image {
+        width
+        height
+        fileName
+      }
+    }
+    headerTextBlock {
+      content {
+        raw
+      }
+    }
+    pageContent {
+      raw
+    }
+  }
+}

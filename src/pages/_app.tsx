@@ -43,8 +43,8 @@ MyApp.getInitialProps = async (appContext: AppContext) => {
 
   const appProps = await App.getInitialProps(appContext);
 
+  // We really only want this to be run once
   if (!linksData) {
-    // We really only want this to be run once
     // TODO: wrap this in a try/catch
     const data = await createGraphCMSClient(
       preview,
