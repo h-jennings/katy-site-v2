@@ -14,7 +14,6 @@ query GetHomepageData {
     headerTextBlock {
       raw
     }
-    introduction # depreciated
     areasOfFocusItems {
       id
       title
