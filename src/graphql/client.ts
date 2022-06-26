@@ -1,5 +1,5 @@
 import { CMS_URL } from '@/utils/constants/cms.constants';
-import { isSSR } from '@/utils/helpers/is-ssr';
+import { isSSR } from '@/utils/helpers/is-ssr.helpers';
 import { GraphQLClient } from 'graphql-request';
 
 const URL = isSSR ? CMS_URL : '/api/graphql';

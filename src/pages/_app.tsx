@@ -4,6 +4,7 @@ import {
   GetExternalLinksQuery,
 } from '@/graphql/generated/types.generated';
 import { Links } from '@/utils/types/cms-data';
+import { PreviewModeControls } from '@components/common/PreviewModeControls';
 import { LayoutDataProvider } from '@components/common/RootLayout/layout-data.store';
 import { RootLayout } from '@components/common/RootLayout/RootLayout';
 import { DefaultSeo } from 'next-seo';
@@ -21,6 +22,7 @@ function MyApp({
   return (
     <>
       <DefaultSeo {...SEO} />
+      <PreviewModeControls />
       <LayoutDataProvider
         createStore={() =>
           create(() => ({
