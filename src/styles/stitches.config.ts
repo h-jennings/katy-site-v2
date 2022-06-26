@@ -18,7 +18,7 @@ export const { getCssText, styled, css, theme } = createStitches({
       ...brown,
       uiBg: '$slate1',
       text1: '$slate12',
-      text2: '$slate10',
+      text2: '$slate11',
       action: '$brown11',
       actionHover: '$brown12',
     },

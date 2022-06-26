@@ -58,7 +58,7 @@ const FocusList = ({ focusItems }: FocusListProps) => {
   const hasFocusItems = focusItems && focusItems.length > 0;
 
   return hasFocusItems ? (
-    <ListStack gap="6">
+    <ListStack as="ul" gap="6">
       {focusItems.map(({ id, title, blurb }) => (
         <Stack key={id} as="li" gap="4">
           <H3>{title}</H3>

@@ -28,13 +28,11 @@ export const Email = () => {
         onClick={onCopy}
         css={{ display: 'inline-block', color: '$text2' }}
       >
-        <span aria-label="pentz.katy@gmail.com">
-          <span aria-hidden className={hideOn({ device: 'mobile' })}>
+        <span aria-hidden>
+          <span className={hideOn({ device: 'mobile' })}>
             pentz.katy@gmail.com
           </span>
-          <span aria-hidden className={hideOn({ device: 'aboveMobile' })}>
-            email
-          </span>
+          <span className={hideOn({ device: 'aboveMobile' })}>email</span>
         </span>
       </MotionButton>
       <motion.div
