@@ -1,9 +1,11 @@
 import { CMS_URL } from '@/utils/constants/cms.constants';
+import { isSSR } from '@/utils/helpers/is-ssr';
 import { GraphQLClient } from 'graphql-request';
 
-// TODO: #26 Need to configure client side requests
-export const createGraphCMSClient = (preview = false) => {
-  return new GraphQLClient(CMS_URL, {
+const URL = isSSR ? CMS_URL : '/api/graphql';
+
+export const createGraphCMSClient = (preview = false, url?: string) => {
+  return new GraphQLClient(url ?? URL, {
     headers: {
       Authorization: `Bearer ${
         !preview ? process.env.CMS_PROD_TOKEN : process.env.CMS_PREVIEW_TOKEN

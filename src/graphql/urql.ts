@@ -1,4 +1,5 @@
 import { CMS_URL } from '@/utils/constants/cms.constants';
+import { isSSR } from '@/utils/helpers/is-ssr';
 import { NextPage } from 'next';
 import { initUrqlClient, SSRExchange, withUrqlClient } from 'next-urql';
 import { cacheExchange, dedupExchange, fetchExchange } from 'urql';
@@ -26,7 +27,7 @@ export const graphCmsClient = (ssrCache: SSRExchange, preview = false) => {
 export const withUrqlSSR = <P = unknown, IP = P>(Page: NextPage<P, IP>) => {
   return withUrqlClient(
     () => ({
-      url: isSSR ? CMS_URL : 'api/graphql',
+      url: isSSR ? CMS_URL : '/api/graphql',
       fetchOptions: {
         headers: {
           Authorization: isSSR ? `Bearer ${process.env.CMS_PROD_TOKEN}` : '',
@@ -36,6 +37,3 @@ export const withUrqlSSR = <P = unknown, IP = P>(Page: NextPage<P, IP>) => {
     { ssr: false, neverSuspend: true },
   )(Page);
 };
-
-// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-const isSSR = typeof window === undefined;
