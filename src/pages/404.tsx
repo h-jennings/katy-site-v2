@@ -1,7 +1,8 @@
 import { StyledLink } from '@components/common/Link';
 import { Stack } from '@components/common/Stack';
-import { H3 } from '@components/common/Text';
+import { Paragraph } from '@components/common/Text';
 import { SectionContainer } from '@components/home/SectionContainer';
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import { GetStaticProps } from 'next';
 import { NextSeo, NextSeoProps } from 'next-seo';
 
@@ -16,12 +17,17 @@ const SEO: NextSeoProps = {
 const Custom404 = () => (
   <>
     <NextSeo {...SEO} noindex nofollow />
+    <VisuallyHidden.Root>
+      <h1>404 Error Page</h1>
+    </VisuallyHidden.Root>
     <SectionContainer label="Something went wrong">
       <Stack gap="5">
-        <H3 size="2" leading="0">
+        <Paragraph size="2" leading="0">
           404 - Page Not Found
-        </H3>
-        <StyledLink href="/">Back to homepage</StyledLink>
+        </Paragraph>
+        <div>
+          <StyledLink href="/">Back to homepage</StyledLink>
+        </div>
       </Stack>
     </SectionContainer>
   </>

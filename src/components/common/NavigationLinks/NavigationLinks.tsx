@@ -10,9 +10,11 @@ export const NavigationLinks = () => {
   return (
     <Stack gap="2">
       <Email />
-      <StyledLink href="/now" css={{ color: '$text2' }}>
-        now
-      </StyledLink>
+      <div>
+        <StyledLink href="/now" css={{ color: '$text2' }}>
+          now
+        </StyledLink>
+      </div>
       {links?.map(({ id, href, displayText }) => (
         <Flex key={id}>
           <StyledLink href={href} css={{ color: '$text2' }}>
