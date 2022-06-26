@@ -9,6 +9,7 @@ import { HEADER_BLOCK_RICHTEXT } from '@/utils/constants/richtext.constants';
 import { Box } from '@components/common/Box';
 import { HeaderTextBlockPortal } from '@components/common/Header/HeaderTextBlock';
 import { RichText } from '@components/common/RichText';
+import { Seo } from '@components/common/Seo';
 import { Stack } from '@components/common/Stack';
 import { Text } from '@components/common/Text';
 import { SectionContainer } from '@components/home/SectionContainer';
@@ -21,12 +22,13 @@ const Now = () => {
   const [{ data }] = useGetNowPageDataQuery();
   const { nowPage } = data ?? {};
 
-  const { headerTextBlock, pageContent, updatedAt } = nowPage ?? {};
+  const { headerTextBlock, pageContent, updatedAt, seo } = nowPage ?? {};
 
   const prettyDate = parseIsoToString(updatedAt);
 
   return (
     <>
+      <Seo seo={seo} />
       <HeaderTextBlockPortal>
         <RichText
           content={headerTextBlock?.content.raw}
@@ -44,9 +46,6 @@ const Now = () => {
                 </p>
               </VisuallyHidden.Root>
               <Text aria-hidden color="2">
-                <Text color="1" inline>
-                  &Delta; &mdash;
-                </Text>{' '}
                 {prettyDate}
               </Text>
             </Box>

@@ -4,12 +4,11 @@ query GetNowPageData {
     seo {
       title
       description
-      keywords
       noIndex
       image {
         width
         height
-        fileName
+        url
       }
     }
     headerTextBlock {

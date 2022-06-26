@@ -7,6 +7,7 @@ import { graphCmsClient, withUrqlSSR } from '@/graphql/urql';
 import { HEADER_BLOCK_RICHTEXT } from '@/utils/constants/richtext.constants';
 import { HeaderTextBlockPortal } from '@components/common/Header/HeaderTextBlock';
 import { RichText } from '@components/common/RichText';
+import { Seo } from '@components/common/Seo';
 import { SectionCerts } from '@components/home/SectionCerts';
 import { SectionExperience } from '@components/home/SectionExperience';
 import { SectionFocusArea } from '@components/home/SectionFocusArea';
@@ -22,10 +23,12 @@ const Home = () => {
     areasOfFocusItems,
     certificationsAndMembershipsLinks,
     experienceTable,
+    seo,
   } = homepage ?? {};
 
   return (
     <>
+      <Seo seo={seo} />
       <HeaderTextBlockPortal>
         <RichText
           content={headerTextBlock?.raw}
