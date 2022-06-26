@@ -11,6 +11,7 @@ import { Seo } from '@components/common/Seo';
 import { SectionCerts } from '@components/home/SectionCerts';
 import { SectionExperience } from '@components/home/SectionExperience';
 import { SectionFocusArea } from '@components/home/SectionFocusArea';
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import type { GetServerSideProps } from 'next';
 import { ssrExchange } from 'urql';
 
@@ -35,6 +36,9 @@ const Home = () => {
           renderers={HEADER_BLOCK_RICHTEXT}
         />
       </HeaderTextBlockPortal>
+      <VisuallyHidden.Root>
+        <h1>Homepage</h1>
+      </VisuallyHidden.Root>
       <SectionFocusArea
         textBlock={areasOfFocusTextBlock}
         focusItems={areasOfFocusItems}

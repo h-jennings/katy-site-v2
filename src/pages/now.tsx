@@ -34,6 +34,9 @@ const Now = () => {
           renderers={HEADER_BLOCK_RICHTEXT}
         />
       </HeaderTextBlockPortal>
+      <VisuallyHidden.Root>
+        <h1>Now Page</h1>
+      </VisuallyHidden.Root>
       <SectionContainer label="Now">
         <Stack gap="7">
           <Stack gap="5">
