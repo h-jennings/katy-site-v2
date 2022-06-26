@@ -4,7 +4,6 @@ import {
   useGetNowPageDataQuery,
 } from '@/graphql/generated/types.generated';
 import { graphCmsClient, withUrqlSSR } from '@/graphql/urql';
-import { styled } from '@/styles/stitches.config';
 import { HEADER_BLOCK_RICHTEXT } from '@/utils/constants/richtext.constants';
 import { Box } from '@components/common/Box';
 import { HeaderTextBlockPortal } from '@components/common/Header/HeaderTextBlock';
@@ -59,7 +58,6 @@ const Now = () => {
           </div>
         </Stack>
       </SectionContainer>
-      <Section></Section>
     </>
   );
 };
@@ -67,15 +65,6 @@ const Now = () => {
 const parseIsoToString = (iso: string): string => {
   return format(parseISO(iso), 'yyyy-MM-dd');
 };
-
-const Section = styled('div', {
-  paddingY: '$8-9',
-  paddingX: '$3',
-
-  '@bp1': {
-    paddingX: '$6',
-  },
-});
 
 export const getServerSideProps: GetServerSideProps<{
   preview: boolean;
