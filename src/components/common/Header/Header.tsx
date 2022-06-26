@@ -18,7 +18,7 @@ export const Header = React.memo(() => (
           <Flex justify="between">
             <div>
               <NextLink href="/">
-                <a aria-label="Link to homepage">
+                <a title="Back to homepage" aria-label="Link to homepage">
                   <Text aria-hidden size="-1" leading="4" inline={false}>
                     Kathryn Pentz <br />
                     <Text size="0" color="2" leading="4">

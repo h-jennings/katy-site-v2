@@ -34,7 +34,7 @@ export const Footer = React.memo(() => (
             <TwoColContent>
               <HeadingText>Credits</HeadingText>
               <Box css={{ paddingLeft: '$6' }}>
-                <NextLink href="/">
+                <NextLink href="https://www.hunterjennings.dev/">
                   <a style={{ display: 'inline-flex' }}>
                     <Text
                       css={{

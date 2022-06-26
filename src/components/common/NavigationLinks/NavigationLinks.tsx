@@ -10,7 +10,7 @@ export const NavigationLinks = () => {
   return (
     <Stack gap="2">
       <Email />
-      <div>
+      <div style={{ display: 'flex' }}>
         <StyledLink href="/now" css={{ color: '$text2' }}>
           now
         </StyledLink>
