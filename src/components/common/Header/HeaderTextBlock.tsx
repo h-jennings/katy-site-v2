@@ -27,7 +27,13 @@ export const HeaderTextBlockProvider = ({
 export const HeaderTextBlock = () => {
   const [, setHeaderTextBlock] = React.useContext(HeaderTextBlockContext);
 
-  return <div id="header-text-block" ref={setHeaderTextBlock} />;
+  return (
+    <div
+      id="header-text-block"
+      style={{ minHeight: 50 }}
+      ref={setHeaderTextBlock}
+    />
+  );
 };
 
 export const HeaderTextBlockPortal = ({
