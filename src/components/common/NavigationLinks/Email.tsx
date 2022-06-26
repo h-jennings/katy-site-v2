@@ -1,5 +1,6 @@
+import { css } from '@/styles/stitches.config';
 import { useClipboard } from '@/utils/hooks/use-clipboard';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import * as React from 'react';
 import { Grid } from '../Grid';
 import { IconCheck } from '../icon/Check';
@@ -21,11 +22,20 @@ export const Email = () => {
       <MotionButton
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
+        onTouchStart={() => setHovered(true)}
+        onTouchEnd={() => setHovered(false)}
         aria-label="Copy email to clipboard"
         onClick={onCopy}
         css={{ display: 'inline-block', color: '$text2' }}
       >
-        {EMAIL}
+        <span aria-label="pentz.katy@gmail.com">
+          <span aria-hidden className={hideOn({ device: 'mobile' })}>
+            pentz.katy@gmail.com
+          </span>
+          <span aria-hidden className={hideOn({ device: 'aboveMobile' })}>
+            email
+          </span>
+        </span>
       </MotionButton>
       <motion.div
         initial="hidden"
@@ -39,9 +49,26 @@ export const Email = () => {
   );
 };
 
+const hideOn = css({
+  variants: {
+    device: {
+      mobile: {
+        '@<bp1': {
+          display: 'none',
+        },
+      },
+      aboveMobile: {
+        '@bp1': {
+          display: 'none',
+        },
+      },
+    },
+  },
+});
+
 const MotionButton = motion(StyledLinkButton);
 
-const variants = {
+const variants: Variants = {
   visible: { opacity: 1 },
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0, transition: { duration: 0.8 } },
 };

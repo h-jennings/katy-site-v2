@@ -27,8 +27,8 @@ export const { getCssText, styled, css, theme } = createStitches({
     },
     fontSizes: {
       /* @link https://utopia.fyi/type/calculator?c=360,14,1.333,1040,16,1.333,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
-      '-1': getConfigFluidValue(10, 12),
-      0: getConfigFluidValue(14, 16),
+      '-1': getConfigFluidValue(14, 16),
+      0: 16,
       1: getConfigFluidValue(19, 21),
       2: getConfigFluidValue(25, 28),
       3: getConfigFluidValue(33, 38),
@@ -104,6 +104,7 @@ export const { getCssText, styled, css, theme } = createStitches({
   },
   media: {
     bp1: '(width >= 520px)',
+    '<bp1': '(width < 520px)',
     bp2: '(width >= 768px)',
     bp3: '(width >= 1040px)',
     bp4: '(width >= 1800px)',

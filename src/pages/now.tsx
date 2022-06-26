@@ -65,7 +65,7 @@ const Now = () => {
   );
 };
 
-export const parseIsoToString = (iso: string): string => {
+const parseIsoToString = (iso: string): string => {
   return format(parseISO(iso), 'yyyy-MM-dd');
 };
 

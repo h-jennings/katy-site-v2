@@ -4,7 +4,6 @@ import * as React from 'react';
 import { Box } from './Box';
 import { ChannelInner, ChannelOuter } from './Channel';
 import { Flex } from './Flex';
-import { Grid } from './Grid';
 import { HeadingText } from './HeadingText';
 import { NavigationLinks } from './NavigationLinks/NavigationLinks';
 import { Stack } from './Stack';
@@ -16,7 +15,7 @@ export const Footer = React.memo(() => (
       <ContentWrapper>
         <Stack gap="8">
           <Stack gap="7">
-            <Grid columns="2">
+            <TwoColContent>
               <Box
                 css={{
                   justifySelf: 'start',
@@ -31,20 +30,30 @@ export const Footer = React.memo(() => (
               <Box css={{ paddingLeft: '$6' }}>
                 <NavigationLinks />
               </Box>
-            </Grid>
-            <Grid columns="2">
+            </TwoColContent>
+            <TwoColContent>
               <HeadingText>Credits</HeadingText>
               <Box css={{ paddingLeft: '$6' }}>
                 <NextLink href="/">
                   <a style={{ display: 'inline-flex' }}>
-                    <Text size="0" color="1" leading="3">
+                    <Text
+                      css={{
+                        whiteSpace: 'nowrap',
+                        '@<bp1': {
+                          textAlign: 'right',
+                        },
+                      }}
+                      size="-1"
+                      color="1"
+                      leading="3"
+                    >
                       Design and Development
                       <br /> by Hunter Jennings
                     </Text>
                   </a>
                 </NextLink>
               </Box>
-            </Grid>
+            </TwoColContent>
           </Stack>
           <Flex justify="between" align="end">
             <Box>
@@ -69,6 +78,16 @@ const ContentWrapper = styled('div', {
 
   '@bp1': {
     paddingX: '$6',
+  },
+});
+
+const TwoColContent = styled('div', {
+  display: 'flex',
+  justifyContent: 'space-between',
+
+  '@bp1': {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(2, 2fr)',
   },
 });
 
