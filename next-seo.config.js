@@ -1,5 +1,6 @@
 const TITLE = 'Personal Site';
-const DESCRIPTION = '';
+const DESCRIPTION =
+  'Katy Pentz is a privacy professional based in Richmond, Virginia. She currently works for Deloitte as a Privacy Program Manager and is open to new opportunites.';
 
 const SEO = {
   title: TITLE,
@@ -10,6 +11,11 @@ const SEO = {
     type: 'website',
     locale: 'en_US',
     url: process.env.NEXT_PUBLIC_URL,
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_URL}/images/social-banner-default.jpg`,
+      },
+    ],
     title: TITLE,
     description: DESCRIPTION,
   },

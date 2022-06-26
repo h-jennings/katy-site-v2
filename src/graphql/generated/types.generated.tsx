@@ -7254,7 +7254,6 @@ export type Seo = {
   id: Scalars['ID'];
   /** This is an image that will display on social networks */
   image?: Maybe<Asset>;
-  keywords: Array<Scalars['String']>;
   noIndex: Scalars['Boolean'];
   /** System stage field */
   stage: Stage;
@@ -7285,7 +7284,6 @@ export type SeoConnection = {
 export type SeoCreateInput = {
   description?: InputMaybe<Scalars['String']>;
   image?: InputMaybe<AssetCreateOneInlineInput>;
-  keywords?: InputMaybe<Array<Scalars['String']>>;
   noIndex: Scalars['Boolean'];
   title: Scalars['String'];
 };
@@ -7365,16 +7363,6 @@ export type SeoManyWhereInput = {
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
   image?: InputMaybe<AssetWhereInput>;
-  /** Matches if the field array contains *all* items provided to the filter and order does match */
-  keywords?: InputMaybe<Array<Scalars['String']>>;
-  /** Matches if the field array contains *all* items provided to the filter */
-  keywords_contains_all?: InputMaybe<Array<Scalars['String']>>;
-  /** Matches if the field array does not contain any of the items provided to the filter */
-  keywords_contains_none?: InputMaybe<Array<Scalars['String']>>;
-  /** Matches if the field array contains at least one item provided to the filter */
-  keywords_contains_some?: InputMaybe<Array<Scalars['String']>>;
-  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
-  keywords_not?: InputMaybe<Array<Scalars['String']>>;
   noIndex?: InputMaybe<Scalars['Boolean']>;
   /** All values that are not equal to given value. */
   noIndex_not?: InputMaybe<Scalars['Boolean']>;
@@ -7404,8 +7392,6 @@ export enum SeoOrderByInput {
   DescriptionDesc = 'description_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
-  KeywordsAsc = 'keywords_ASC',
-  KeywordsDesc = 'keywords_DESC',
   NoIndexAsc = 'noIndex_ASC',
   NoIndexDesc = 'noIndex_DESC',
   TitleAsc = 'title_ASC',
@@ -7503,7 +7489,6 @@ export type SeoParentWhereUniqueInput = {
 export type SeoUpdateInput = {
   description?: InputMaybe<Scalars['String']>;
   image?: InputMaybe<AssetUpdateOneInlineInput>;
-  keywords?: InputMaybe<Array<Scalars['String']>>;
   noIndex?: InputMaybe<Scalars['Boolean']>;
   title?: InputMaybe<Scalars['String']>;
 };
@@ -7521,7 +7506,6 @@ export type SeoUpdateManyInlineInput = {
 
 export type SeoUpdateManyInput = {
   description?: InputMaybe<Scalars['String']>;
-  keywords?: InputMaybe<Array<Scalars['String']>>;
   noIndex?: InputMaybe<Scalars['Boolean']>;
   title?: InputMaybe<Scalars['String']>;
 };
@@ -7632,16 +7616,6 @@ export type SeoWhereInput = {
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
   image?: InputMaybe<AssetWhereInput>;
-  /** Matches if the field array contains *all* items provided to the filter and order does match */
-  keywords?: InputMaybe<Array<Scalars['String']>>;
-  /** Matches if the field array contains *all* items provided to the filter */
-  keywords_contains_all?: InputMaybe<Array<Scalars['String']>>;
-  /** Matches if the field array does not contain any of the items provided to the filter */
-  keywords_contains_none?: InputMaybe<Array<Scalars['String']>>;
-  /** Matches if the field array contains at least one item provided to the filter */
-  keywords_contains_some?: InputMaybe<Array<Scalars['String']>>;
-  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
-  keywords_not?: InputMaybe<Array<Scalars['String']>>;
   noIndex?: InputMaybe<Scalars['Boolean']>;
   /** All values that are not equal to given value. */
   noIndex_not?: InputMaybe<Scalars['Boolean']>;
@@ -8174,13 +8148,12 @@ export type GetHomepageDataQuery = {
       __typename?: 'Seo';
       title: string;
       description?: string | null;
-      keywords: Array<string>;
       noIndex: boolean;
       image?: {
         __typename?: 'Asset';
         width?: number | null;
         height?: number | null;
-        fileName: string;
+        url: string;
       } | null;
     } | null;
     headerTextBlock: { __typename?: 'RichText'; raw: any };
@@ -8219,13 +8192,12 @@ export type GetNowPageDataQuery = {
       __typename?: 'Seo';
       title: string;
       description?: string | null;
-      keywords: Array<string>;
       noIndex: boolean;
       image?: {
         __typename?: 'Asset';
         width?: number | null;
         height?: number | null;
-        fileName: string;
+        url: string;
       } | null;
     };
     headerTextBlock: {
@@ -8262,12 +8234,11 @@ export const GetHomepageDataDocument = gql`
       seo {
         title
         description
-        keywords
         noIndex
         image {
           width
           height
-          fileName
+          url
         }
       }
       headerTextBlock {
@@ -8312,12 +8283,11 @@ export const GetNowPageDataDocument = gql`
       seo {
         title
         description
-        keywords
         noIndex
         image {
           width
           height
-          fileName
+          url
         }
       }
       headerTextBlock {
