@@ -20,7 +20,7 @@ export const Header = React.memo(() => (
               <NextLink href="/">
                 <a title="Back to homepage" aria-label="Link to homepage">
                   <Text aria-hidden size="-1" leading="4" inline={false}>
-                    Kathryn Pentz <br />
+                    Katy Pentz <br />
                     <Text size="0" color="2" leading="4">
                       Privacy Professional
                     </Text>
