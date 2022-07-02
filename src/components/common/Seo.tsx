@@ -13,6 +13,7 @@ export const Seo = ({ seo }: SeoProps) => {
 
   const SEO: NextSeoProps = {
     noindex: noIndex,
+    nofollow: noIndex,
     title,
     description: description ?? '',
     openGraph: {

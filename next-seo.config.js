@@ -2,11 +2,12 @@ const TITLE = 'Personal Site';
 const DESCRIPTION =
   'Katy Pentz is a privacy professional based in Richmond, Virginia. She currently works for Deloitte as a Privacy Program Manager and is open to new opportunites.';
 
+/** @type {import('next-seo').NextSeoProps} */
 const SEO = {
   title: TITLE,
   titleTemplate: '%s | Katy Pentz',
   description: DESCRIPTION,
-  url: process.env.NEXT_PUBLIC_URL,
+  canonical: process.env.NEXT_PUBLIC_URL,
   openGraph: {
     type: 'website',
     locale: 'en_US',
