@@ -27,7 +27,7 @@ const Now = () => {
 
   return (
     <>
-      <Seo seo={seo} />
+      <Seo seo={seo} path="/now" />
       <HeaderTextBlockPortal>
         <RichText
           content={headerTextBlock?.content.raw}

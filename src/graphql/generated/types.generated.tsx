@@ -1953,7 +1953,6 @@ export type Homepage = Node & {
   documentInStages: Array<Homepage>;
   /** A section to display a collection of work experiences */
   experienceTable: Array<ExperienceItem>;
-  headerTextBlock: RichText;
   headerTextBlockComponent?: Maybe<HeaderTextBlock>;
   /** List of Homepage versions */
   history: Array<Version>;
@@ -2073,7 +2072,6 @@ export type HomepageCreateInput = {
   certificationsAndMembershipsLinks?: InputMaybe<LinkCreateManyInlineInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   experienceTable?: InputMaybe<ExperienceItemCreateManyInlineInput>;
-  headerTextBlock: Scalars['RichTextAST'];
   headerTextBlockComponent?: InputMaybe<HeaderTextBlockCreateOneInlineInput>;
   internalName: Scalars['String'];
   seo?: InputMaybe<SeoCreateOneInlineInput>;
@@ -2233,7 +2231,6 @@ export type HomepageUpdateInput = {
   areasOfFocusTextBlock?: InputMaybe<Scalars['RichTextAST']>;
   certificationsAndMembershipsLinks?: InputMaybe<LinkUpdateManyInlineInput>;
   experienceTable?: InputMaybe<ExperienceItemUpdateManyInlineInput>;
-  headerTextBlock?: InputMaybe<Scalars['RichTextAST']>;
   headerTextBlockComponent?: InputMaybe<HeaderTextBlockUpdateOneInlineInput>;
   internalName?: InputMaybe<Scalars['String']>;
   seo?: InputMaybe<SeoUpdateOneInlineInput>;
@@ -2258,7 +2255,6 @@ export type HomepageUpdateManyInlineInput = {
 
 export type HomepageUpdateManyInput = {
   areasOfFocusTextBlock?: InputMaybe<Scalars['RichTextAST']>;
-  headerTextBlock?: InputMaybe<Scalars['RichTextAST']>;
 };
 
 export type HomepageUpdateManyWithNestedWhereInput = {

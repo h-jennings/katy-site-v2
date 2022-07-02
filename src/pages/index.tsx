@@ -29,7 +29,7 @@ const Home = () => {
 
   return (
     <>
-      <Seo seo={seo} />
+      <Seo seo={seo} path="" />
       <HeaderTextBlockPortal>
         <RichText
           content={headerTextBlockComponent?.content.raw}
