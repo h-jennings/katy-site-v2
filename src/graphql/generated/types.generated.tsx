@@ -1961,7 +1961,6 @@ export type Homepage = Node & {
   id: Scalars['ID'];
   /** Name of the page */
   internalName: Scalars['String'];
-  introduction: Scalars['String'];
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']>;
   /** User that last published this document */
@@ -2077,7 +2076,6 @@ export type HomepageCreateInput = {
   headerTextBlock: Scalars['RichTextAST'];
   headerTextBlockComponent?: InputMaybe<HeaderTextBlockCreateOneInlineInput>;
   internalName: Scalars['String'];
-  introduction: Scalars['String'];
   seo?: InputMaybe<SeoCreateOneInlineInput>;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
 };
@@ -2179,25 +2177,6 @@ export type HomepageManyWhereInput = {
   internalName_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
   internalName_starts_with?: InputMaybe<Scalars['String']>;
-  introduction?: InputMaybe<Scalars['String']>;
-  /** All values containing the given string. */
-  introduction_contains?: InputMaybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  introduction_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  introduction_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values that are not equal to given value. */
-  introduction_not?: InputMaybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  introduction_not_contains?: InputMaybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  introduction_not_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are not contained in given list. */
-  introduction_not_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values not starting with the given string. */
-  introduction_not_starts_with?: InputMaybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  introduction_starts_with?: InputMaybe<Scalars['String']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -2243,8 +2222,6 @@ export enum HomepageOrderByInput {
   IdDesc = 'id_DESC',
   InternalNameAsc = 'internalName_ASC',
   InternalNameDesc = 'internalName_DESC',
-  IntroductionAsc = 'introduction_ASC',
-  IntroductionDesc = 'introduction_DESC',
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
@@ -2259,7 +2236,6 @@ export type HomepageUpdateInput = {
   headerTextBlock?: InputMaybe<Scalars['RichTextAST']>;
   headerTextBlockComponent?: InputMaybe<HeaderTextBlockUpdateOneInlineInput>;
   internalName?: InputMaybe<Scalars['String']>;
-  introduction?: InputMaybe<Scalars['String']>;
   seo?: InputMaybe<SeoUpdateOneInlineInput>;
 };
 
@@ -2283,7 +2259,6 @@ export type HomepageUpdateManyInlineInput = {
 export type HomepageUpdateManyInput = {
   areasOfFocusTextBlock?: InputMaybe<Scalars['RichTextAST']>;
   headerTextBlock?: InputMaybe<Scalars['RichTextAST']>;
-  introduction?: InputMaybe<Scalars['String']>;
 };
 
 export type HomepageUpdateManyWithNestedWhereInput = {
@@ -2403,25 +2378,6 @@ export type HomepageWhereInput = {
   internalName_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
   internalName_starts_with?: InputMaybe<Scalars['String']>;
-  introduction?: InputMaybe<Scalars['String']>;
-  /** All values containing the given string. */
-  introduction_contains?: InputMaybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  introduction_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  introduction_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values that are not equal to given value. */
-  introduction_not?: InputMaybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  introduction_not_contains?: InputMaybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  introduction_not_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are not contained in given list. */
-  introduction_not_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values not starting with the given string. */
-  introduction_not_starts_with?: InputMaybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  introduction_starts_with?: InputMaybe<Scalars['String']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -6923,7 +6879,10 @@ export type GetHomepageDataQuery = {
         url: string;
       } | null;
     } | null;
-    headerTextBlock: { __typename?: 'RichText'; raw: any };
+    headerTextBlockComponent?: {
+      __typename?: 'HeaderTextBlock';
+      content: { __typename?: 'RichText'; raw: any };
+    } | null;
     areasOfFocusItems: Array<{
       __typename?: 'FocusItem';
       id: string;
@@ -7008,8 +6967,10 @@ export const GetHomepageDataDocument = gql`
           url
         }
       }
-      headerTextBlock {
-        raw
+      headerTextBlockComponent {
+        content {
+          raw
+        }
       }
       areasOfFocusItems {
         id

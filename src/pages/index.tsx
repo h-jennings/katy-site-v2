@@ -19,7 +19,7 @@ const Home = () => {
   const [{ data }] = useGetHomepageDataQuery();
   const { homepage } = data ?? {};
   const {
-    headerTextBlock,
+    headerTextBlockComponent,
     areasOfFocusTextBlock,
     areasOfFocusItems,
     certificationsAndMembershipsLinks,
@@ -32,7 +32,7 @@ const Home = () => {
       <Seo seo={seo} />
       <HeaderTextBlockPortal>
         <RichText
-          content={headerTextBlock?.raw}
+          content={headerTextBlockComponent?.content.raw}
           renderers={HEADER_BLOCK_RICHTEXT}
         />
       </HeaderTextBlockPortal>

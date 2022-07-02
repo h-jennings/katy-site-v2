@@ -10,8 +10,10 @@ query GetHomepageData {
         url
       }
     }
-    headerTextBlock {
-      raw
+    headerTextBlockComponent {
+      content {
+        raw
+      }
     }
     areasOfFocusItems {
       id
