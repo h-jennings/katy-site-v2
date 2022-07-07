@@ -1,20 +1,15 @@
 import { theme } from '@/styles/stitches.config';
 
 type SpaceKeys = keyof typeof theme.space;
-type SpaceVariantObject<TProp extends string> = Record<
-  SpaceKeys,
-  Record<TProp, `$${string}`>
->;
 
-const createSpaceVariant = <T extends string>(property: T) =>
+const createSpaceVariant = (property: string) =>
   Object.entries(theme.space).reduce((acc, [key]) => {
-    // @ts-expect-error TS is really annoying with reduce derived from objects
-    acc[key] = {
+    acc[key as SpaceKeys] = {
       [property]: `$${key}`,
     };
 
     return acc;
-  }, {} as SpaceVariantObject<T>);
+  }, {} as Record<SpaceKeys, Record<string, string>>);
 
 export const GAP = createSpaceVariant('gap');
 export const COLUMN_GAP = createSpaceVariant('column-gap');
