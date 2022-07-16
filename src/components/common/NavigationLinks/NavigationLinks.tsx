@@ -8,7 +8,7 @@ export const NavigationLinks = () => {
   const links = useLayoutDataStore((state) => state.links);
 
   return (
-    <Stack gap="2">
+    <Stack gap="2" data-cy-navigation-links>
       <Email />
       <div style={{ display: 'flex' }}>
         <StyledLink href="/now" css={{ color: '$text2' }}>
