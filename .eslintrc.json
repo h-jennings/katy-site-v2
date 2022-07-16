@@ -2,7 +2,10 @@
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": ["./tsconfig.json", "./cypress/tsconfig.json"]
+  },
+  "env": {
+    "cypress/globals": true
   },
   "extends": [
     "next/core-web-vitals",
@@ -21,10 +24,5 @@
     "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/prefer-reduce-type-parameter": "off"
   },
-  "ignorePatterns": [
-    "next-sitemap.config.js",
-    "next-seo.config.js",
-    "next.config.js",
-    "graphql.config.js"
-  ]
+  "ignorePatterns": ["**/*.js"]
 }
