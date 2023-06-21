@@ -1,8 +1,8 @@
 overwrite: true
 schema:
-  - ${CMS_URL}:
+  - 'https://api-us-east-1.hygraph.com/v2/${CMS_SPACE}/${CMS_ENV}':
       headers:
-        Authorization: ${CMS_BEARER_TOKEN}
+        Authorization: Bearer ${CMS_PROD_TOKEN}
 documents:
   - './src/**/*.graphql'
   - './src/**/*.ts'
