@@ -47,3 +47,4 @@ public/robots.txt
 
 # Generated graphql stuff
 schema.generated.graphql
+/src/graphql/generated/*
